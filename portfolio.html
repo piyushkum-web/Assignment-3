@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Portfolio</title>
+<style>
+        body{
+             background-image: "https://t3.ftcdn.net/jpg/03/97/28/88/360_F_397288801_AIfeWPqgAVVRJGtlp5N4QDnuY1NCFGJF.jpg";
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            line-height: 2;
+            max-width: 1000px;
+            padding: 30px;
+            margin: 0 auto;
+            display: grid;
+            background-color: lightpink;
+            scroll-behavior: smooth;
+
+
+                }
+        header{
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            background-color: rgb(245, 146, 162);
+            border-radius: 20px;
+            position: relative;
+        }
+        .logo-container {
+            size: 10px;
+            text-align:start;
+        }
+        .logo{
+            position: absolute;
+            bottom: 10px;
+           height: 80px;
+           width:5x;
+           border-radius: 100%;
+           opacity: 50%;
+
+        }
+        nav ul{
+            display:flex;
+          position: absolute;
+            justify-content:flex-end;
+            margin: 0px;
+            padding: 0;
+            width:100%;            
+            text-align: bottom;
+            grid-template-columns: 100px;
+            margin-top:100px;
+
+        }
+        nav ul li{
+            display: block;
+            padding: 10px;
+        }
+        nav ul a{
+            text-decoration: none;
+            color: black;
+        }
+        h1{
+            color: navy;
+        }
+        section{margin: 30px 0}
+ 
+        #about h2{
+        color: darkgreen;
+        text-align: start;
+        }
+        #about{
+            background:rgb(252, 170, 182);
+            padding: 25px;
+
+ 
+        }
+       .project {
+        background:rgb(252, 170, 182);
+        padding: 20px;
+        h2{
+            color: green;
+        }
+        ul li{
+            color: navy;
+        } 
+       }
+       #contact{
+        background: rgb(243, 177, 188);
+       }
+       #contact h2{
+        color: darkorchid;
+       }
+       #contact li{
+        color: brown;
+       }
+       footer{
+        padding: 40px;
+        color: grey;
+        margin:10px auto;
+        text-align: center;
+       }
+       @media(max-width:700px){
+        body{padding: 10px;}
+        h1{font-size: 1.6em;}
+ 
+        #about{
+            padding: 15px;
+            background-color: rgb(206, 150, 159);
+            color: black;
+        }
+
+        #contact{
+            background-color: rgb(128, 105, 105); 
+        }
+        #contact li{
+            color: blue;
+        }
+ 
+       }
+       .hover-word:hover{
+        background-color: pink;
+        color: green;
+        transition: color 0.3s ease;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 1.5px;
+       }
+</style>
+</head>
+<body>
+<header class="header">
+<div class="logo-container">
+<img src="https://t3.ftcdn.net/jpg/03/97/28/88/360_F_397288801_AIfeWPqgAVVRJGtlp5N4QDnuY1NCFGJF.jpg" 
+                alt="logo" class="logo">
+</div>
+<nav>
+<ul>
+<li ><a href="#Home"><span class="hover-word">Home</span></a></li>
+<li><a href="#Login"><span class="hover-word">Login</span></a></li>
+<li><a href="#Contact"><span class="hover-word">Contact</span></a></li>
+</ul>
+</nav>
+<h1>My Portfolio</h1>
+<p>This is about my personal experience and skills</p>
+</header>
+<section id="about">
+<h2>About Me</h2>
+<p>Hi, I'm Piyush, a web developer woth a passion for creating amazing Websites.</p> 
+</section>
+<section>
+<div class="project">
+<h2>My Projects</h2>
+ 
+                  <ul>
+<li>Project 1: Portfolio Website</li>
+<li>Project 2: E-commerce Website</li>
+<li>Project 3: Blogging Website</li>
+</ul>
+</div>
+</section>
+<section id="contact">
+<h2>Contant</h2>
+<ul style="list-style-type: none; padding: 0px;">
+<li>📧 piyushkumar@gmail.com</li>
+<li>📞 +91-5467388626</li>
+<li>📍Noida,India</li>
+</ul>
+</section>
+<div>
+<footer> ©2025 Piyush All Rights Reserved</footer>
+</div>
+</body>
+</html>
