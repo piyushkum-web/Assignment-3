@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Quiz App</title>
+<style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+            background-color: #d2e1f7;
+            color: black;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 30px;
+ 
+        }
+        .quiz-container{
+            background:#a9c8f7;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        h1{
+            text-align: center;
+            color:navy;
+        }
+        .question{
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .options button{
+            display: block;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            color: rgb(245, 243, 243);
+            background: rgb(5, 69, 90);
+            transition: background 0.3s ease;
+            font-size: 15px;
+        }
+        .options button:hover{
+            background:rgb(44, 166, 241);
+        }
+        .result{
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+</style>
+</head>
+<body>
+<div class="quiz-container">
+<h1>Quiz App</h1> 
+<div id="quiz">
+<div class="question" id="question">Loading Question...</div>
+<div class="options" id="options"></div>
+</div>
+<div class="result" id="result"></div>
+</div>
+ 
+    <script>
+        const quizData = [
+            {
+            question: "Which sport is played with 11 players in given options?",
+            options:["VolleyBall", "HandBall", "Relay", "Cricket"],
+            answer:"Cricket"
+        },
+        {
+            question: "Who is called as God of Cricket?",
+            options:["Brian Lara", "David Warner", "AB de Villiers", "Sachin Tendulkar"],
+            answer:"Sachin Tendulkar"
+        },
+        {
+            question: "Who is called as Chhaava",
+            options:["Chhatrapati Shivaji Maharaj", "Chhatrapati Sambhaji Maharaj", "Maharana Pratap Singh", "Chandragupta Maurya"],
+            answer:"Chhatrapati Sambhaji Maharaj"
+        }
+    ];
+    let currentQuestion = 0;
+    let score = 0;
+ 
+    const questionE1 = document.getElementById("question");
+    const optionsE1 = document.getElementById("options");
+    const resultE1 = document.getElementById("result");
+ 
+    function loadQuestion(){
+        const q = quizData[currentQuestion];
+        questionE1.textContent = q.question;
+        optionsE1.innerHTML="";
+ 
+        q.options.forEach(option => {
+            const button = document.createElement("button");
+            button.textContent = option;
+            button.onclick = () => checkAnswer(option);
+            optionsE1.appendChild(button);
+        });
+ 
+        
+    }
+ 
+ 
+    function checkAnswer(selected){
+        const correct = quizData[currentQuestion].answer;
+        if(selected === correct){
+            score++;
+        }
+        currentQuestion++;
+        if(currentQuestion < quizData.length){
+            loadQuestion();
+        }else{
+            showResult();
+        }
+    }
+    function showResult(){
+        document.getElementById("quiz").style.display="none";
+        resultE1.textContent = `you scored ${score} out of ${quizData.length}`;
+    }
+    loadQuestion();
+ 
+    </script>
+</body>
+</html>
